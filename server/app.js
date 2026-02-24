@@ -21,6 +21,7 @@ const app = express();
 
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
+// ...
 app.use(
   cors({
     origin: ['http://localhost:5173', 'http://example.com']
@@ -50,6 +51,12 @@ app.get("/api/students", (req, res) => {
 
 app.get("/docs", (req, res) => {
   res.sendFile(__dirname + "/views/cohorts.json");
+});
+app.get("/api/cohorts", (req, res) => {
+  res.sendFile(__dirname + "/cohorts.json");
+});
+app.get("/api/students", (req, res) => {
+  res.sendFile(__dirname + "/students.json");
 });
 
 
